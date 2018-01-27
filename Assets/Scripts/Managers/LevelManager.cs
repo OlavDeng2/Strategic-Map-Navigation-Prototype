@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager {
 
-    public void LoadScene(string SceneName)
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadCity(string cityName)
+    {
+        //TODO: Write code to actually load the bloody cities
     }
 }
