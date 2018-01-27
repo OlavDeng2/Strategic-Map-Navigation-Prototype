@@ -7,6 +7,12 @@ public class LevelManager : MonoBehaviour{
 
     public static LevelManager levelManager;
 
+    //whether we are battle, city or open world
+    private locationType currentLocation;
+
+    //data for city
+    private string currentCityName;
+
     void Awake()
     {
         // Set the instace of the game manager to be this
@@ -27,9 +33,51 @@ public class LevelManager : MonoBehaviour{
         SceneManager.LoadScene(sceneName);
     }
 
-    public void LoadCity(string cityName)
+    public void EnterOpenWorld()
+    {
+        LoadScene("OpenWorld");
+    }
+
+    public void EnterCity(string cityName)
     {
         //TODO: Write code to actually load the bloody cities
         print("player wants to enter " + cityName);
+        currentCityName = cityName;
+
+        LoadScene("City");
+
     }
+
+    public void EnterBattle()
+    {
+        print("Entering battle now");
+        LoadScene("Battle");
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "city")
+        {
+            currentLocation = locationType.City;
+        }
+
+        if (currentScene.name == "Battle")
+        {
+            currentCityName = null;
+            currentLocation = locationType.Battle;
+        }
+
+        if (currentScene.name == "OpenWorld")
+        {
+            currentCityName = null;
+            currentLocation = locationType.OpenWorld;
+        }
+    }
+
+    //Setters and getters as necesary
+
+
+
+    enum locationType { City, OpenWorld, Battle}
 }

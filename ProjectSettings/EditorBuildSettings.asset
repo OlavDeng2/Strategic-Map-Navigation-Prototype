@@ -9,5 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 31a050e61ddb607489abf632ed20d154
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/OpenWorld.unity
     guid: dd39df8f0e7ae704299cc8d4f6a9b82f
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: 9790fdb035f040d45885fd7b81edb8b0
+  - enabled: 1
+    path: Assets/Scenes/Battle.unity
+    guid: 00ec2831729a69447b01d1a0c46861bf
