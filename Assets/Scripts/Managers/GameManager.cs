@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public static GameManager gameManager;
+
+    void Awake()
+    {
+        // Set the instace of the game manager to be this
+        if (!gameManager)
+        {
+            // Sets this to not be destroyed when loading a new scene
+            DontDestroyOnLoad(gameObject);
+            gameManager = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

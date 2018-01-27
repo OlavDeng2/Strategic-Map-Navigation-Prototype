@@ -6,12 +6,18 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed = 5f;
     public float rotationSpeed = 1f;
 
+    //just temporary till i get something better working
+    [Header("camera")]
+    public GameObject mainCamera;
+    public Vector3 cameraPosition;
+
     private Rigidbody2D playerRB;
 
 	// Use this for initialization
 	void Start () {
         playerRB = GetComponent<Rigidbody2D>();
-		
+        mainCamera = GameObject.Find("Main Camera");
+
 	}
 	
 	// Update is called once per frame
@@ -19,6 +25,8 @@ public class PlayerController : MonoBehaviour {
     {
         
         movePlayer();
+        cameraPosition = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
+        mainCamera.transform.position = cameraPosition;
 
     }
 

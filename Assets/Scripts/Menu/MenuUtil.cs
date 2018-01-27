@@ -6,11 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class MenuUtil : MonoBehaviour {
-    public LevelManager levelManager = new LevelManager();
 
     public void LoadLevel(string levelName)
     {
-        levelManager.LoadScene(levelName);
+        LevelManager.levelManager.LoadScene(levelName);
     }
 
 
