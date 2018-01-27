@@ -13,4 +13,14 @@ public class City : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("player has entered the city");
+
+        if (collision.name == "Player")
+        {
+            print("player has entered the city");
+        }
+    }
 }
