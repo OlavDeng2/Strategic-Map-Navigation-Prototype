@@ -6,6 +6,13 @@ using System.IO;
 [System.Serializable]
 public class City {
 
+    public City(string nameOfCity)
+    {
+        this.cityName = nameOfCity;
+    }
+
+    public readonly string cityName;
+
 	// Use this for initialization
 	void Start () {
 		
