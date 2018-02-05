@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-public class City : MonoBehaviour {
+[System.Serializable]
+public class City {
 
 	// Use this for initialization
 	void Start () {
