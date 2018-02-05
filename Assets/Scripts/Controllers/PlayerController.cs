@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed = 5f;
     public float rotationSpeed = 1f;
     public int draught = 1;
-    public bool canMove = true;
+    public bool stuckInShallows = false;
 
     //just temporary till i get something better working
     [Header("camera")]
@@ -35,31 +35,37 @@ public class PlayerController : MonoBehaviour {
 
     private void movePlayer()
     {
-
-        //move forwards
-        if (Input.GetKey("w") && canMove)
+        if(!stuckInShallows)
         {
-            playerRB.velocity = transform.up * moveSpeed;
+            //move forwards
+            if (Input.GetKey("w"))
+            {
+                playerRB.velocity = transform.up * moveSpeed;
+            }
+
+
+
+            //Rotate left
+            if (Input.GetKey("a"))
+            {
+                transform.Rotate(Vector3.forward * rotationSpeed);
+            }
+
+            //Rotate right
+            if (Input.GetKey("d"))
+            {
+                transform.Rotate(Vector3.forward * -rotationSpeed);
+            }
         }
 
-        //move backwards
-
-        if (Input.GetKey("s"))
+        //move backwards, only possible when stuck in shallows
+        if (Input.GetKey("s") && stuckInShallows)
         {
             playerRB.velocity = transform.up * -moveSpeed;
 
         }
 
-        //Rotate left
-        if (Input.GetKey("a") && canMove)
-        {
-            transform.Rotate(Vector3.forward * rotationSpeed);
-        }
-
-        //Rotate right
-        if (Input.GetKey("d") && canMove)
-        {
-            transform.Rotate(Vector3.forward * -rotationSpeed);
-        }
     }
+
+
 }

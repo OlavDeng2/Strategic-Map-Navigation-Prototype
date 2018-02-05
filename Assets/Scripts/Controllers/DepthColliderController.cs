@@ -13,7 +13,7 @@ public class DepthColliderController : MonoBehaviour {
         {
             if(playerController.draught >= depth)
             {
-                playerController.canMove = false;
+                playerController.stuckInShallows = true;
             }
         }
     }
@@ -23,7 +23,7 @@ public class DepthColliderController : MonoBehaviour {
         playerController = collision.GetComponent<PlayerController>();
         if (collision.name == "Player")
         {
-             playerController.canMove = true;
+             playerController.stuckInShallows = false;
         }
     }
 }
