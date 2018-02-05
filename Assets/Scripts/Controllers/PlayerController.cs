@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    [Header("Movement")]
     public float moveSpeed = 5f;
     public float rotationSpeed = 1f;
+    public int draught = 1;
+    public bool canMove = true;
 
     //just temporary till i get something better working
     [Header("camera")]
@@ -34,28 +37,27 @@ public class PlayerController : MonoBehaviour {
     {
 
         //move forwards
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w") && canMove)
         {
             playerRB.velocity = transform.up * moveSpeed;
         }
 
         //move backwards
-        //not in use for this demo
-        /*
+
         if (Input.GetKey("s"))
         {
             playerRB.velocity = transform.up * -moveSpeed;
 
-        }*/
+        }
 
         //Rotate left
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a") && canMove)
         {
             transform.Rotate(Vector3.forward * rotationSpeed);
         }
 
         //Rotate right
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && canMove)
         {
             transform.Rotate(Vector3.forward * -rotationSpeed);
         }
