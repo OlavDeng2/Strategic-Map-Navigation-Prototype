@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour {
         movePlayer();
         cameraPosition = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
         mainCamera.transform.position = cameraPosition;
-
     }
 
     private void movePlayer()
@@ -42,8 +41,6 @@ public class PlayerController : MonoBehaviour {
             {
                 playerRB.velocity = transform.up * moveSpeed;
             }
-
-
 
             //Rotate left
             if (Input.GetKey("a"))

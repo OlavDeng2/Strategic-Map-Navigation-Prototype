@@ -525,6 +525,16 @@ Prefab:
       propertyPath: m_Name
       value: Oslo
       objectReference: {fileID: 0}
+    - target: {fileID: 102647492473367412, guid: 320f39339061c7d4481bd90f6c5e3047,
+        type: 2}
+      propertyPath: m_Text
+      value: Oslo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114995571955741132, guid: 320f39339061c7d4481bd90f6c5e3047,
+        type: 2}
+      propertyPath: cityName
+      value: Oslo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 320f39339061c7d4481bd90f6c5e3047, type: 2}
   m_IsPrefabParent: 0
@@ -810,6 +820,21 @@ Prefab:
     - target: {fileID: 1002278232769958, guid: 320f39339061c7d4481bd90f6c5e3047, type: 2}
       propertyPath: m_Name
       value: Amsterdam
+      objectReference: {fileID: 0}
+    - target: {fileID: 102647492473367412, guid: 320f39339061c7d4481bd90f6c5e3047,
+        type: 2}
+      propertyPath: m_Text
+      value: Amsterdam
+      objectReference: {fileID: 0}
+    - target: {fileID: 114995571955741132, guid: 320f39339061c7d4481bd90f6c5e3047,
+        type: 2}
+      propertyPath: cityName
+      value: Amsterdam
+      objectReference: {fileID: 0}
+    - target: {fileID: 114995571955741132, guid: 320f39339061c7d4481bd90f6c5e3047,
+        type: 2}
+      propertyPath: cityNationality
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 320f39339061c7d4481bd90f6c5e3047, type: 2}

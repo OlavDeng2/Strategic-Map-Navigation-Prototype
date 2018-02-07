@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour{
     public static LevelManager levelManager;
 
     //data for city
-    private string currentCityName;
+    private City currentCity;
 
     void Awake()
     {
@@ -37,9 +37,7 @@ public class LevelManager : MonoBehaviour{
 
     public void EnterCity(string cityName)
     {
-        //TODO: Write code to actually load the bloody cities
         print("player wants to enter " + cityName);
-        currentCityName = cityName;
         LoadScene("City");
 
     }
@@ -51,5 +49,6 @@ public class LevelManager : MonoBehaviour{
     }
 
     //getters and setters
-    public string GetCityName() { return currentCityName; }
+    public void SetCurrentCity(City city) { currentCity = city; }
+    public City GetCurrentCity() { return currentCity; }
 }

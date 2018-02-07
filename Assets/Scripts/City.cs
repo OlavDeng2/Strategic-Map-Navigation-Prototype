@@ -1,25 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
-[System.Serializable]
 public class City {
 
-    public City(string nameOfCity)
+    public City(string nameOfCity, Nationality nation)
     {
         this.cityName = nameOfCity;
+        this.cityNationality = nation;
     }
 
-    public readonly string cityName;
+    public string cityName;
+    public Nationality cityNationality;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public enum Nationality { Friendly, Enemy};
 }
