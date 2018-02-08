@@ -11,6 +11,7 @@ public class DepthColliderController : MonoBehaviour {
     {
         if (collision.name == "Player")
         {
+            print("collider belongs to " + gameObject);
             playerController = collision.GetComponent<PlayerController>();
             if (playerController.draught >= depth)
             {
