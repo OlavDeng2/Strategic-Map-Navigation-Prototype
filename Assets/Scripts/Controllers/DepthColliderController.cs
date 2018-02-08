@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DepthColliderController : MonoBehaviour {
+    //do note that the depth is measured in
     public int depth;
     PlayerController playerController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        playerController = collision.GetComponent<PlayerController>();
         if (collision.name == "Player")
         {
-            if(playerController.draught >= depth)
+            playerController = collision.GetComponent<PlayerController>();
+            if (playerController.draught >= depth)
             {
                 playerController.stuckInShallows = true;
             }
@@ -20,10 +21,10 @@ public class DepthColliderController : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        playerController = collision.GetComponent<PlayerController>();
         if (collision.name == "Player")
         {
-             playerController.stuckInShallows = false;
+            playerController = collision.GetComponent<PlayerController>();
+            playerController.stuckInShallows = false;
         }
     }
 }
