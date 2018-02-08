@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: WorldMap
+    uniqueID: 1287360577
+    locked: 0
+  - name: Ships
+    uniqueID: 2508904287
+    locked: 0
+  - name: Cities
+    uniqueID: 3574466013
+    locked: 0
