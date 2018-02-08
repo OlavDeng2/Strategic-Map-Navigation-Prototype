@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour{
+public class LevelManager : MonoBehaviour {
 
     public static LevelManager levelManager;
 
     //data for city
     private City currentCity;
+
+    //Data for player location
+    private Vector3 playerOpenWorldLocation;
+
 
     void Awake()
     {
@@ -51,4 +55,7 @@ public class LevelManager : MonoBehaviour{
     //getters and setters
     public void SetCurrentCity(City city) { currentCity = city; }
     public City GetCurrentCity() { return currentCity; }
+
+    public void SetCurrentCoordinates(Vector3 currentCoordinates) { playerOpenWorldLocation = currentCoordinates; }
+    public Vector3 GetCurrentCoordinates() { return playerOpenWorldLocation; }
 }

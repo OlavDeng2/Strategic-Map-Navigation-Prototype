@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager gameManager;
 
+    
     void Awake()
     {
         // Set the instace of the game manager to be this

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour {
         playerRB = GetComponent<Rigidbody2D>();
         mainCamera = GameObject.Find("Main Camera");
 
+        this.transform.position = LevelManager.levelManager.GetCurrentCoordinates();
+
 	}
 	
 	// Update is called once per frame

@@ -13,6 +13,8 @@ public class OpenWorldCityController : MonoBehaviour {
 
     public City city;
 
+    private bool playerWantsToEnter = false;
+
     // Use this for initialization
     void Start()
     {
@@ -29,7 +31,25 @@ public class OpenWorldCityController : MonoBehaviour {
         if (collision.name == "Player")
         {
             LevelManager.levelManager.SetCurrentCity(city);
-            LevelManager.levelManager.EnterCity(cityName);
+            playerWantsToEnter = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        playerWantsToEnter = false;
+    }
+
+    private void OnGUI()
+    {
+        if(playerWantsToEnter)
+        {
+            if (GUI.Button(new Rect(0, 0, Screen.width, 100), "Do you want to enter " + cityName))
+            {
+                LevelManager.levelManager.SetCurrentCoordinates(this.transform.position);
+                LevelManager.levelManager.EnterCity(cityName);
+            }
+        }
+        
     }
 }
